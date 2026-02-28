@@ -2,7 +2,7 @@ import { HeroWidget, SeasonWidget } from '../widgets/landing'
 
 export default function Home() {
   return (
-    <main className="min-h-screen my-20 md:my-30 lg:my-40 relative space-y-12">
+    <main className="min-h-screen my-20 md:my-30 lg:my-40 relative space-y-12 px-4 py-4 md:px-8 md:py-6 lg:px-12 lg:py-8 overflow-x-clip">
       <HeroWidget />
 
       <SeasonWidget

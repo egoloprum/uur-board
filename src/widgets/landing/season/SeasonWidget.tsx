@@ -1,4 +1,10 @@
-import { colorMap, fontMap, rotateMap } from '@/src/shared/utils'
+import {
+  colorMap,
+  fontMap,
+  getRotation,
+  getRotationDegree,
+  getRotationStyle,
+} from '@/src/shared/utils'
 import Image from 'next/image'
 
 interface SeasonWidgetProps {
@@ -27,11 +33,13 @@ export const SeasonWidget = ({ topic, description, articles }: SeasonWidgetProps
             {words.split(' ').map((word, index) => {
               const randomFont = fontMap[Math.floor(Math.random() * fontMap.length)]
               const randomBgColor = colorMap[Math.floor(Math.random() * colorMap.length)]
-              const randomRotate = rotateMap[Math.floor(Math.random() * rotateMap.length)]
+              const rotationDegree = getRotationDegree()
+              const rotationStyle = getRotationStyle(rotationDegree)
 
               return (
                 <div
-                  className={`h-fit text-black px-2 py-1 md:px-4 md:py-2 text-xl sm:texl-2xl md:text-3xl lg:text-4xl shadow-xl z-10 ${randomRotate} ${randomFont} ${randomBgColor}`}
+                  className={`h-fit text-black px-2 py-1 md:px-4 md:py-2 text-xl sm:texl-2xl md:text-3xl lg:text-4xl shadow-xl z-10 ${randomFont} ${randomBgColor}`}
+                  style={{ ...rotationStyle }}
                   key={word + index}
                 >
                   <p>{word}</p>
@@ -44,12 +52,14 @@ export const SeasonWidget = ({ topic, description, articles }: SeasonWidgetProps
 
       <article className="flex flex-wrap justify-center gap-16">
         {articles.map((article, index) => {
-          const randomRotate = rotateMap[Math.floor(Math.random() * rotateMap.length)]
+          const rotationDegree = getRotationDegree()
+          const rotationStyle = getRotationStyle(rotationDegree)
 
           return (
             <section
-              className={`bg-white p-3 sm:p-4 w-full sm:w-72 md:w-80 flex flex-col gap-3 hover:scale-105 transition-all duration-300 shadow-xl cursor-pointer ${randomRotate}`}
+              className={`bg-white p-3 sm:p-4 w-full sm:w-72 md:w-80 flex flex-col gap-3 hover:scale-105 transition-all duration-300 shadow-xl cursor-pointer`}
               key={article.title + index}
+              style={{ ...rotationStyle }}
             >
               <div className="bg-black aspect-square w-full relative overflow-hidden">
                 {article.imageSrc ? (

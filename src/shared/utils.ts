@@ -34,26 +34,16 @@ export const colorMap = [
   'bg-mist-300',
 ]
 
-export const rotateMap = [
-  '-rotate-[10deg]',
-  '-rotate-[9deg]',
-  '-rotate-[8deg]',
-  '-rotate-[7deg]',
-  '-rotate-[6deg]',
-  '-rotate-[5deg]',
-  '-rotate-[4deg]',
-  '-rotate-[3deg]',
-  '-rotate-[2deg]',
-  '-rotate-[1deg]',
-  'rotate-0',
-  'rotate-[1deg]',
-  'rotate-[2deg]',
-  'rotate-[3deg]',
-  'rotate-[4deg]',
-  'rotate-[5deg]',
-  'rotate-[6deg]',
-  'rotate-[7deg]',
-  'rotate-[8deg]',
-  'rotate-[9deg]',
-  'rotate-[10deg]',
-]
+export const getRotationDegree = () => {
+  const min = -10
+  const max = 10
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
+export const getRotation = (degree: number) => {
+  return degree < 0 ? `-rotate-${Math.abs(degree)}` : `rotate-${degree}`
+}
+
+export const getRotationStyle = (degree: number) => {
+  return degree ? { transform: `rotate(${degree}deg)` } : {}
+}

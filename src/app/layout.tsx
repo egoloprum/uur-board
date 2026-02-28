@@ -90,7 +90,7 @@ export default function RootLayout({
           ${source.variable}
           ${lobster.variable}
           ${caveat.variable} 
-          relative min-h-screen antialiased px-4 py-4 md:px-8 md:py-6 lg:px-12 lg:py-8`}
+          relative min-h-screen antialiased`}
       >
         <div className="fixed inset-0 -z-10">
           <Image
