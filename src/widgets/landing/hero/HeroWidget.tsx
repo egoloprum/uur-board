@@ -1,3 +1,5 @@
+import { colorMap, fontMap } from '@/src/shared/utils'
+
 const heroDescription = 'Монгол хэл дээрх шинжлэх ухаан технологи урлагийн товхимол'
 
 export const HeroWidget = () => {
@@ -16,14 +18,19 @@ export const HeroWidget = () => {
 
   return (
     <section className="flex flex-wrap gap-4 justify-center my-24 md:my-32 lg:my-40">
-      {words.map((word, index) => (
-        <div
-          key={index}
-          className={`bg-white h-fit text-black p-4 text-xl sm:text-4xl md:text-5xl lg:text-6xl shadow-2xl ${styles[index] || ''}`}
-        >
-          <p>{word}</p>
-        </div>
-      ))}
+      {words.map((word, index) => {
+        const randomFont = fontMap[Math.floor(Math.random() * fontMap.length)]
+        const randomBgColor = colorMap[Math.floor(Math.random() * colorMap.length)]
+
+        return (
+          <div
+            key={index}
+            className={`h-fit text-black p-4 py-2 text-xl sm:text-4xl md:text-5xl lg:text-6xl shadow-2xl ${styles[index] || ''} ${randomFont} ${randomBgColor}`}
+          >
+            <p>{word}</p>
+          </div>
+        )
+      })}
     </section>
   )
 }

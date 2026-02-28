@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -23,4 +23,44 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-grotesk {
+  font-family: var(--font-grotesk);
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.font-arima {
+  font-family: var(--font-arima);
+}
+
+.font-oswald {
+  font-family: var(--font-oswald);
+}
+
+.font-cascadia {
+  font-family: var(--font-cascadia);
+}
+
+.font-slab {
+  font-family: var(--font-slab);
+}
+
+.font-source {
+  font-family: var(--font-source);
+}
+
+.font-lobster {
+  font-family: var(--font-lobster);
+}
+
+.font-caveat {
+  font-family: var(--font-caveat);
 }

@@ -1,17 +1,69 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import {
+  Roboto_Condensed,
+  Montserrat,
+  Inter,
+  Arima,
+  Oswald,
+  Cascadia_Mono,
+  Roboto_Slab,
+  Source_Code_Pro,
+  Lobster,
+  Caveat,
+} from 'next/font/google'
 import './globals.css'
 import Image from 'next/image'
 import { CookiesWidget, Footer, Header } from '../widgets'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const roboto = Roboto_Condensed({
   subsets: ['latin'],
+  variable: '--font-roboto',
 })
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const montserrat = Montserrat({
   subsets: ['latin'],
+  variable: '--font-montserrat',
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
+
+const arima = Arima({
+  subsets: ['latin'],
+  variable: '--font-arima',
+})
+
+const oswald = Oswald({
+  subsets: ['latin'],
+  variable: '--font-oswald',
+})
+
+const cascadia = Cascadia_Mono({
+  subsets: ['latin'],
+  variable: '--font-cascadia',
+})
+
+const slab = Roboto_Slab({
+  subsets: ['latin'],
+  variable: '--font-slab',
+})
+
+const source = Source_Code_Pro({
+  subsets: ['latin'],
+  variable: '--font-source',
+})
+
+const lobster = Lobster({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-lobster',
+})
+
+const caveat = Caveat({
+  subsets: ['latin'],
+  variable: '--font-caveat',
 })
 
 export const metadata: Metadata = {
@@ -27,7 +79,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} relative min-h-screen antialiased px-4 py-4 md:px-8 md:py-6 lg:px-12 lg:py-8`}
+        className={`
+          ${roboto.variable}
+          ${montserrat.variable}
+          ${inter.variable}
+          ${arima.variable}
+          ${oswald.variable}
+          ${cascadia.variable}
+          ${slab.variable}
+          ${source.variable}
+          ${lobster.variable}
+          ${caveat.variable} 
+          relative min-h-screen antialiased px-4 py-4 md:px-8 md:py-6 lg:px-12 lg:py-8`}
       >
         <div className="fixed inset-0 -z-10">
           <Image
