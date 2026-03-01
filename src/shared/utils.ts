@@ -34,6 +34,8 @@ export const colorMap = [
   'bg-mist-300',
 ]
 
+export const titleMap = ['khiimel-oyun-ukhaan', 'jazz', 'suunii-paradox']
+
 export const getRotationDegree = () => {
   const min = -10
   const max = 10

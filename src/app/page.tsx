@@ -20,17 +20,20 @@ export default function Home() {
             description:
               'Хиймэл оюун ухаан нь анхандаа янз бүрийн дүрснүүдийг хооронд нь ялган таних, төрөл бүрийн хэл дээр ойлгох  шинэ мэдээллүүдэд суралцан дэвших зэргийг гол зорилгоо болгож байв.',
             imageSrc: '',
+            href: '/blogs/khiimel-oyun-ukhaan',
           },
           {
             title: 'Жазз',
             description:
               'Жазз хөгжмийг Луис Армстронгийн “​​What a Wonderful World” дуугүйгээр төсөөлөхийн аргагүй..',
             imageSrc: '',
+            href: '/blogs/jazz',
           },
           {
             title: 'Сүүний парадокс',
             description: 'Хүнийг сүү боловсруулдаг болгосон генийн мутаци гэж юу вэ?',
             imageSrc: '',
+            href: '/blogs/suunii-paradox',
           },
         ]}
       />

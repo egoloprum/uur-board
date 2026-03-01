@@ -1,18 +1,10 @@
 import { Stick } from '@/src/shared/components'
-import {
-  colorMap,
-  fontMap,
-  getRandomBorderShape,
-  getRotationDegree,
-  getRotationStyle,
-} from '@/src/shared/utils'
+import { colorMap, fontMap, getRandomBorderShape, getRotationDegree } from '@/src/shared/utils'
 
 export default function Page({}) {
   const randomFont = fontMap[Math.floor(Math.random() * fontMap.length)]
   const randomBgColor = colorMap[Math.floor(Math.random() * colorMap.length)]
   const rotationDegree = getRotationDegree()
-  const rotationStyle = getRotationStyle(rotationDegree)
-
   const leftStickRotation = rotationDegree + 25
   const rightStickRotation = rotationDegree - 25
 
@@ -45,9 +37,10 @@ export default function Page({}) {
         >
           <p>
             Сайн байцгаана уу! Бид бол сайн дураараа нэгдсэн шинжлэх ухаан, технологи, урлагт
-            хайртай залуус. Монгол хэлнийхээ дархлааг хамгаалах зорилгоор бид 'ҮҮР' товхимолыг
-            үүсгэн байгуулсан. Бид шинжлэх ухаан, технологи, урлагийн талаарх мэдлэгийг монгол хэл
-            дээр судалгаанд суурилсан, ойлгомжтой бөгөөд сонирхолтойгоор түгээхийг хичээж байна.
+            хайртай залуус. Монгол хэлнийхээ дархлааг хамгаалах зорилгоор бид &apos;ҮҮР&apos;
+            товхимолыг үүсгэн байгуулсан. Бид шинжлэх ухаан, технологи, урлагийн талаарх мэдлэгийг
+            монгол хэл дээр судалгаанд суурилсан, ойлгомжтой бөгөөд сонирхолтойгоор түгээхийг хичээж
+            байна.
           </p>
         </div>
         <Stick position="right" rotation={rightStickRotation} />

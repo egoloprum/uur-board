@@ -7,6 +7,7 @@ import {
   getRotationStyle,
 } from '@/src/shared/utils'
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface SeasonWidgetProps {
   topic: {
@@ -18,6 +19,7 @@ interface SeasonWidgetProps {
     title: string
     description: string
     imageSrc: string
+    href: string
   }[]
 }
 
@@ -99,25 +101,28 @@ const SeasonArticle = ({
     title: string
     description: string
     imageSrc: string
+    href: string
   }
 }) => {
   return (
     <div className="w-fit space-y-4">
-      <section
-        className={`bg-white p-3 sm:p-4 flex flex-col gap-3 
+      <Link href={article.href}>
+        <section
+          className={`bg-white p-3 sm:p-4 flex flex-col gap-3 
                   hover:scale-105 transition-all duration-300 shadow-xl cursor-pointer`}
-      >
-        <div className="bg-black aspect-square w-full relative overflow-hidden">
-          {article.imageSrc ? (
-            <Image src={article.imageSrc} alt={article.title} fill className="object-cover" />
-          ) : (
-            <div className="absolute inset-0 from-gray-800 to-black" />
-          )}
-        </div>
-        <p className="text-black text-xl sm:text-2xl md:text-3xl font-bold whitespace-nowrap">
-          {article.title}
-        </p>
-      </section>
+        >
+          <div className="bg-black aspect-square w-full relative overflow-hidden">
+            {article.imageSrc ? (
+              <Image src={article.imageSrc} alt={article.title} fill className="object-cover" />
+            ) : (
+              <div className="absolute inset-0 from-gray-800 to-black" />
+            )}
+          </div>
+          <p className="text-black text-xl sm:text-2xl md:text-3xl font-bold whitespace-nowrap">
+            {article.title}
+          </p>
+        </section>
+      </Link>
       <div
         className={`bg-white text-gray-700 text-sm sm:text-base px-2 py-1 
                   md:px-4 md:py-2 hover:scale-105 transition-all duration-300 max-w-100 cursor-pointer`}
