@@ -3,9 +3,11 @@ import { colorMap } from '../utils'
 export const Stick = ({
   position,
   rotation,
+  className,
 }: {
   position: 'left' | 'right'
   rotation?: number
+  className?: string
 }) => {
   const baseStyle =
     position === 'left' ? '-left-3 md:-left-4 lg:-left-5' : '-right-3 md:-right-4 lg:-right-5'
@@ -18,7 +20,7 @@ export const Stick = ({
 
   return (
     <div
-      className={`h-6 w-3 md:h-8 md:w-4 lg:h-10 lg:w-5 absolute z-50 opacity-75 top-1/2 ${baseStyle} ${randomBgColor} rounded-sm shadow-md`}
+      className={`h-6 w-3 md:h-8 md:w-4 lg:h-10 lg:w-5 absolute z-50 opacity-75 top-1/2 rounded-sm shadow-md ${baseStyle} ${randomBgColor} ${className}`}
       style={{
         ...rotateStyle,
         transform: `${rotateStyle.transform || ''} translateY(-${translation}%)`.trim(),

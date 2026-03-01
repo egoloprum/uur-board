@@ -1,3 +1,4 @@
+import { Stick } from '@/src/shared/components'
 import {
   colorMap,
   fontMap,
@@ -51,25 +52,39 @@ export const SeasonWidget = ({ topic, description, articles }: SeasonWidgetProps
 
 const SeasonDescription = ({ words }: { words: string }) => {
   return (
-    <section className="flex flex-wrap gap-4 justify-center">
+    <section className="flex flex-wrap gap-x-8 gap-y-4 justify-center">
       {words.split(' ').map((word, index) => {
         const randomFont = fontMap[Math.floor(Math.random() * fontMap.length)]
         const randomBgColor = colorMap[Math.floor(Math.random() * colorMap.length)]
         const rotationDegree = getRotationDegree()
         const rotationStyle = getRotationStyle(rotationDegree)
 
+        const leftStickRotation = rotationDegree + 25
+        const rightStickRotation = rotationDegree - 25
+
         return (
-          <div
-            className={`h-fit text-black px-2 py-1 md:px-4 md:py-2 
+          <div className="relative" key={word + index}>
+            <Stick
+              position="left"
+              rotation={leftStickRotation}
+              className="h-4 w-2 md:h-4 md:w-2 lg:h-6 lg:w-3 xl:h-8 xl:w-4"
+            />
+            <div
+              className={`h-fit text-black px-2 py-1 md:px-4 md:py-2 
                     text-xl sm:texl-2xl md:text-3xl lg:text-4xl 
                     shadow-xl z-10 ${randomFont} ${randomBgColor}`}
-            style={{
-              ...getRandomBorderShape({ pointsPerSide: 10, variance: 10 }),
-              ...rotationStyle,
-            }}
-            key={word + index}
-          >
-            <p>{word}</p>
+              style={{
+                ...getRandomBorderShape({ pointsPerSide: 10, variance: 10 }),
+                ...rotationStyle,
+              }}
+            >
+              <p>{word}</p>
+            </div>
+            <Stick
+              position="right"
+              rotation={rightStickRotation}
+              className="h-4 w-2 md:h-4 md:w-2 lg:h-6 lg:w-3 xl:h-8 xl:w-4"
+            />
           </div>
         )
       })}

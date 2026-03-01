@@ -24,7 +24,8 @@ export const Header = ({}) => {
         <Stick position="left" rotation={leftStickRotation} />
         <Link href="/">
           <nav
-            className={`h-fit w-fit text-black p-4 py-2 text-xl sm:text-4xl md:text-5xl lg:text-6xl shadow-2xl ${randomFont} ${randomBgColor}`}
+            className={`h-fit w-fit text-black p-4 py-2 
+              text-xl sm:text-4xl md:text-5xl lg:text-6xl shadow-2xl ${randomFont} ${randomBgColor}`}
             style={{
               ...getRandomBorderShape({ pointsPerSide: 10, variance: 10 }),
               ...rotationStyle,
@@ -39,7 +40,8 @@ export const Header = ({}) => {
         <Stick position="left" rotation={leftStickRotation} />
         <Link href="/about">
           <nav
-            className={`h-fit w-fit text-black p-4 py-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl shadow-2xl ${randomFont} ${randomBgColor}`}
+            className={`h-fit w-fit text-black p-4 py-2 
+              text-xl sm:text-2xl md:text-3xl lg:text-4xl shadow-2xl ${randomFont} ${randomBgColor}`}
             style={{
               ...getRandomBorderShape({ pointsPerSide: 10, variance: 10 }),
               ...rotationStyle,
