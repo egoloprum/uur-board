@@ -25,7 +25,7 @@ export const Footer = ({}) => {
           <Stick position="left" rotation={leftStickRotation} />
           <Link href="/">
             <nav
-              className={`h-fit w-fit text-black p-4 py-2 
+              className={`h-fit w-fit text-black p-4 py-2 underline underline-offset-4
               text-xl sm:text-4xl md:text-5xl lg:text-6xl shadow-2xl ${randomFont} ${randomBgColor}`}
               style={{
                 ...getRandomBorderShape({ pointsPerSide: 10, variance: 10 }),
@@ -42,7 +42,7 @@ export const Footer = ({}) => {
           <Stick position="left" rotation={leftStickRotation} />
           <Link href="https://www.instagram.com/uur.mn" target="_blank">
             <nav
-              className={`h-fit w-fit text-black p-4 py-2 
+              className={`h-fit w-fit text-black p-4 py-2 underline underline-offset-4
               text-xl sm:text-2xl md:text-3xl lg:text-4xl shadow-2xl ${randomFont} ${randomBgColor}`}
               style={{
                 ...getRandomBorderShape({ pointsPerSide: 10, variance: 10 }),
@@ -59,9 +59,9 @@ export const Footer = ({}) => {
       <div className="relative">
         <Stick position="left" rotation={leftStickRotation} />
         <div
-          className={`h-fit w-full text-center 
-      text-black p-4 text-lg sm:text-xl 
-      md:text-2xl lg:text-3xl rotate-1 shadow-xl z-10 mb-10 ${randomFont} ${randomBgColor}`}
+          className={`h-fit w-full text-center
+          text-black p-4 text-lg sm:text-xl 
+            md:text-2xl lg:text-3xl rotate-1 shadow-xl z-10 mb-10 ${randomFont} ${randomBgColor}`}
           style={{
             ...getRandomBorderShape({ pointsPerSide: 5, variance: 5 }),
           }}

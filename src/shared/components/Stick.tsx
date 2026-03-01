@@ -1,4 +1,4 @@
-import { colorMap } from '../utils'
+import { colorMap, getRandomBorderShape } from '../utils'
 
 export const Stick = ({
   position,
@@ -23,6 +23,7 @@ export const Stick = ({
       className={`h-6 w-3 md:h-8 md:w-4 lg:h-10 lg:w-5 absolute z-50 opacity-75 top-1/2 rounded-sm shadow-md ${baseStyle} ${randomBgColor} ${className}`}
       style={{
         ...rotateStyle,
+        ...getRandomBorderShape({ pointsPerSide: 10, variance: 10 }),
         transform: `${rotateStyle.transform || ''} translateY(-${translation}%)`.trim(),
       }}
     />
