@@ -1,4 +1,10 @@
-import { colorMap, fontMap, getRotationDegree, getRotationStyle } from '@/src/shared/utils'
+import {
+  colorMap,
+  fontMap,
+  getRandomBorderShape,
+  getRotationDegree,
+  getRotationStyle,
+} from '@/src/shared/utils'
 import Image from 'next/image'
 
 interface SeasonWidgetProps {
@@ -21,6 +27,9 @@ export const SeasonWidget = ({ topic, description, articles }: SeasonWidgetProps
         className="bg-white h-fit w-full text-center 
       text-black font-bold p-4 text-2xl sm:text-3xl 
       md:text-4xl lg:text-5xl -rotate-2 shadow-xl z-10"
+        style={{
+          ...getRandomBorderShape({ pointsPerSide: 5, variance: 5 }),
+        }}
       >
         <h2>{topic.content}</h2>
       </div>
@@ -54,7 +63,10 @@ const SeasonDescription = ({ words }: { words: string }) => {
             className={`h-fit text-black px-2 py-1 md:px-4 md:py-2 
                     text-xl sm:texl-2xl md:text-3xl lg:text-4xl 
                     shadow-xl z-10 ${randomFont} ${randomBgColor}`}
-            style={{ ...rotationStyle }}
+            style={{
+              ...getRandomBorderShape({ pointsPerSide: 10, variance: 10 }),
+              ...rotationStyle,
+            }}
             key={word + index}
           >
             <p>{word}</p>
@@ -94,6 +106,7 @@ const SeasonArticle = ({
       <div
         className={`bg-white text-gray-700 text-sm sm:text-base px-2 py-1 
                   md:px-4 md:py-2 hover:scale-105 transition-all duration-300 max-w-100 cursor-pointer`}
+        style={{ ...getRandomBorderShape({ pointsPerSide: 5, variance: 5 }) }}
       >
         <p className="line-clamp-3">{article.description}</p>
       </div>

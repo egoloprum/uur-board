@@ -1,5 +1,11 @@
 import { Stick } from '@/src/shared/components'
-import { colorMap, fontMap, getRotationDegree, getRotationStyle } from '@/src/shared/utils'
+import {
+  colorMap,
+  fontMap,
+  getRandomBorderShape,
+  getRotationDegree,
+  getRotationStyle,
+} from '@/src/shared/utils'
 
 const heroDescription = 'Монгол хэл дээрх шинжлэх ухаан технологи урлагийн товхимол'
 
@@ -23,7 +29,10 @@ export const HeroWidget = () => {
             <Stick position="left" rotation={leftStickRotation} />
             <div
               className={`h-fit text-black p-4 py-2 text-xl sm:text-4xl md:text-5xl lg:text-6xl shadow-2xl ${randomFont} ${randomBgColor}`}
-              style={{ ...rotationStyle }}
+              style={{
+                ...getRandomBorderShape({ pointsPerSide: 10, variance: 10 }),
+                ...rotationStyle,
+              }}
             >
               <p>{word}</p>
             </div>
